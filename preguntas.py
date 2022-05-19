@@ -101,7 +101,7 @@ def pregunta_04():
     from sklearn.model_selection import GridSearchCV
     from sklearn.pipeline import Pipeline
     from sklearn.naive_bayes import BernoulliNB
-    from sklearn.metrics import accuracy_score
+    
 
     # Cargue las variables.
     x_train, x_test, y_train, y_test = pregunta_02()
@@ -141,21 +141,17 @@ def pregunta_04():
 
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
     # parámetros. Use cv = 5, y "accuracy" como métrica de evaluación
-    scoring =  {
-        'precision_score': make_scorer(precision_score),
-        'recall_score': make_scorer(recall_score),
-        'accuracy_score': make_scorer(accuracy_score)
-        }
+
     gridSearchCV = GridSearchCV(
         estimator = countVectorizer(),
         param_grid = param_grid,
         cv=5,
-        scoring = scoring,
+        scoring = "accuracy",
         refit = "AUC",
         return_train_score =  True,
     )
 
-    # Búsque la mejor combinación de regresores
+    #Búsque la mejor combinación de regresores
     gridSearchCV.fit(x_train, y_train)
 
     # Retorne el mejor modelo
