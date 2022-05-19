@@ -120,8 +120,8 @@ def pregunta_04():
         stop_words=None,
         token_pattern=r'\b[a-z]\b',
         binary=False,
-        max_df=100,
-        min_df=1,
+        max_df=1,
+        min_df=0.05,
     )
 
     # Cree un pipeline que contenga el CountVectorizer y el modelo de BernoulliNB.
