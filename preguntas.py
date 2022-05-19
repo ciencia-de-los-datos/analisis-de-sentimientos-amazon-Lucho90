@@ -121,7 +121,7 @@ def pregunta_04():
         token_pattern= r"(?u)\b[a-zA-Z][a-zA-Z]+\b",
         binary=False,
         max_df=1.0,
-        min_df=30,
+        min_df=5,
     )
 
     # Cree un pipeline que contenga el CountVectorizer y el modelo de BernoulliNB.
