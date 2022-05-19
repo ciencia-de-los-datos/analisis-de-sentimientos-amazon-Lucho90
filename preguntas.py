@@ -101,7 +101,7 @@ def pregunta_04():
     from sklearn.model_selection import GridSearchCV
     from sklearn.pipeline import Pipeline
     from sklearn.naive_bayes import BernoulliNB
-    
+    import numpy as np
 
     # Cargue las variables.
     x_train, x_test, y_train, y_test = pregunta_02()
@@ -120,8 +120,8 @@ def pregunta_04():
         stop_words='english',
         token_pattern= r"(?u)\b[a-zA-Z][a-zA-Z]+\b",
         binary=False,
-        max_df=1,
-        min_df=0.05,
+        max_df=1.0,
+        min_df=30,
     )
 
     # Cree un pipeline que contenga el CountVectorizer y el modelo de BernoulliNB.
