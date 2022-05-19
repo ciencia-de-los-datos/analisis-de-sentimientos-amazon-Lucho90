@@ -118,7 +118,7 @@ def pregunta_04():
         analyzer= analyzer,
         lowercase=True,
         stop_words='english',
-        token_pattern= r'\b[a-zA-Z][a-zA-Z]+\b',
+        token_pattern= r"(?u)\b[a-zA-Z][a-zA-Z]+\b",
         binary=False,
         max_df=1,
         min_df=30,
